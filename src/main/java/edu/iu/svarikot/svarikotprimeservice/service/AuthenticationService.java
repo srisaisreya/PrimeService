@@ -1,6 +1,7 @@
 package edu.iu.svarikot.svarikotprimeservice.service;
 import edu.iu.svarikot.svarikotprimeservice.model.Customer;
 import edu.iu.svarikot.svarikotprimeservice.repository.IAuthenticationRepository;
+import edu.iu.svarikot.primesservice.repository.AuthenticationDBRepository;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,9 +13,10 @@ import java.io.IOException;
 
 @Service
 public class AuthenticationService implements IAuthenticationService, UserDetailsService {
-    IAuthenticationRepository authenticationRepository;
+    
+    AuthenticationDBRepository authenticationRepository;
 
-    public AuthenticationService(IAuthenticationRepository authenticationRepository) {
+    public AuthenticationService(AuthenticationDBRepository authenticationRepository) {
         this.authenticationRepository = authenticationRepository;
     }
     @Override
