@@ -18,7 +18,7 @@ public class AuthenticationService implements IAuthenticationService, UserDetail
         this.authenticationRepository = authenticationRepository;
     }
     @Override
-    public boolean register(Customer customer) throws IOException{
+    public Customer register(Customer customer) throws IOException{
         BCryptPasswordEncoder bc = new BCryptPasswordEncoder();
         String passwordEncoded = bc.encode(customer.getPassword());
         customer.setPassword(passwordEncoded);
